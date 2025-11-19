@@ -154,6 +154,12 @@
             border-radius: 12px;
             box-shadow: var(--shadow);
             margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .chart-container > div {
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .chart-title {
@@ -172,7 +178,7 @@
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -231,6 +237,14 @@
 
             .container {
                 padding: 0 1rem;
+            }
+
+            .chart-container {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
 
