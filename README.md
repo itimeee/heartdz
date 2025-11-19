@@ -55,12 +55,30 @@ An interactive web-based visualization dashboard for exploring the Cleveland Hea
 
 ## Usage
 
-### Quick Start
+### Quick Start - Two Options:
 
-1. **Open the visualization:**
-   Simply open `index.html` in a modern web browser (Chrome, Firefox, Safari, or Edge)
+#### **Option 1: Standalone Version (Recommended for Quick View)**
+Simply open `index_standalone.html` directly in any modern web browser. This version has all data embedded and works without a server!
 
-2. **Navigate sections:**
+```bash
+# Just double-click the file or open it in your browser
+open index_standalone.html
+```
+
+#### **Option 2: Local Server (For Development)**
+If you want to use the original `index.html` with separate JSON data:
+
+```bash
+# Start a local web server
+python3 -m http.server 8000
+
+# Then open in your browser:
+# http://localhost:8000/index.html
+```
+
+### Navigation
+
+1. **Navigate sections:**
    Use the navigation tabs at the top to explore different analyses:
    - Overview
    - Distribution Analysis
@@ -68,7 +86,7 @@ An interactive web-based visualization dashboard for exploring the Cleveland Hea
    - Disease Indicators
    - Key Insights
 
-3. **Interact with charts:**
+2. **Interact with charts:**
    - Hover over data points for detailed information
    - Click legend items to show/hide data series
    - Zoom and pan on charts for detailed views
@@ -98,9 +116,10 @@ This will create/update `data/processed_data.json` with:
 
 ```
 heartdz/
-├── index.html              # Main visualization dashboard
-├── process_data.py         # Data processing script
-├── README.md              # This file
+├── index.html                 # Main visualization dashboard (needs server)
+├── index_standalone.html      # Standalone version (works offline, no server needed)
+├── process_data.py            # Data processing script
+├── README.md                  # This file
 └── data/
     ├── heart_disease.csv      # Raw dataset (303 records)
     └── processed_data.json    # Processed data with statistics
